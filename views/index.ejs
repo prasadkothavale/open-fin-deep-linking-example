@@ -1,0 +1,27 @@
+<%- header %>
+<div class="row">
+    <div class="col-6">
+        <a href="/order/new" class="btn btn-warning btn-lg btn-block">Place Order</a>
+    </div>
+    <div class="col-6">
+        <a href="/order/view" class="btn btn-primary btn-lg btn-block">My Orders</a>
+    </div>
+</div>
+<script>
+    function copyLink() {
+        generateLink(window.location.href)
+    }
+
+    document.addEventListener("run-requested", function (event) {
+        if(event.userAppConfigArgs){
+            //args parameter contains deep link context
+            window.location = event.userAppConfigArgs.redirect
+        }
+    })
+
+    search = window.location.search
+    if(search != undefined && search != null && search != "" && search.search("=") > 0) {
+        window.location = search.split("=")[1]
+    }
+</script>
+<%- footer %>

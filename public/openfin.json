@@ -1,0 +1,26 @@
+{
+  "devtools_port": 9090,
+  "startup_app": {
+    "name": "OpenFin Deep Linking POC",
+    "description": "A OpenFin app to demonstrate deep linking",
+    "url": "http://192.168.43.44:5000",
+    "uuid": "openfin-deep-linking-poc",
+    "autoShow": true,
+    "defaultWidth": 550,
+    "defaultHeight": 675,
+    "defaultTop": 25,
+    "defaultLeft": 50,
+    "resizable": true,
+    "maximizable": true
+
+  },
+  "runtime": {
+    "arguments": "",
+    "version": "stable"
+  },
+  "shortcut": {
+    "company": "OpenFin",
+    "description": "A OpenFin app to demonstrate deep linking",
+    "name": "OpenFin Deep Linking"
+  }
+}

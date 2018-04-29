@@ -1,0 +1,26 @@
+<%- header %>
+<h5 class="card-title">My Orders</h5>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Order ID</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+    <% for(var order of orders) { %>
+        <tr>
+            <td><a class="link" href="/order/view/<%= order.orderId %>"><%= order.orderId %></a></td>
+            <td><%= dateFormat(new Date(parseInt(order.orderId))) %></td>
+        </tr>
+    <% } %>
+    </tbody>
+</table>
+<a href="/" class="btn btn-secondary"><i class="material-icons" style="font-size: inherit">arrow_back</i> Back</a>
+
+<script>
+    function copyLink() {
+        generateLink(window.location.href)
+    }
+</script>
+<%- footer %>

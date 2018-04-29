@@ -1,0 +1,26 @@
+{
+  "name": "openfin-deep-linking-poc",
+  "version": "1.0.0",
+  "description": "A OpenFin Node.js app using Express 4 to demonstrate deep linking",
+  "author": {
+    "name": "Prasad Kothavale"
+  },
+  "engines": {
+    "node": "8.9.1"
+  },
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "ejs": "2.5.9",
+    "express": "4.16.3",
+    "dateformat": "3.0.3"
+  },
+  "devDependencies": {
+    "request": "2.81.0",
+    "tape": "4.7.0"
+  },
+  "keywords": ["node", "express", "openfin", "deep", "linking", "poc"],
+  "license": "MIT"
+}

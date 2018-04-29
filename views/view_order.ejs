@@ -1,0 +1,17 @@
+<%- header %>
+<h5 class="card-title">View Order</h5>
+<table class="table table-striped">
+    <tr><td>Order ID</td><td><%= order.orderId %></td></tr>
+    <tr><td>Stock</td><td><%= order.stock %></td></tr>
+    <tr><td>Quantity</td><td><%= order.quantity %></td></tr>
+    <tr><td>Price</td><td><%= order.price %></td></tr>
+    <tr><td>Direction</td><td><%= order.direction %></td></tr>
+</table>
+<a href="/" class="btn btn-secondary"><i class="material-icons" style="font-size: inherit">arrow_back</i> Back</a>
+
+<script>
+    function copyLink() {
+       generateLink(window.location.href)
+    }
+</script>
+<%- footer %>

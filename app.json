@@ -1,0 +1,8 @@
+{
+  "name": "OpenFin Deep Linking POC",
+  "description": "A OpenFin Node.js app using Express 4 to demonstrate deep linking",
+  "repository": "https://github.com/heroku/node-js-getting-started",
+  "logo": "https://cdn.rawgit.com/heroku/node-js-getting-started/master/public/node.svg",
+  "keywords": ["node", "express", "openfin", "deep", "linking", "poc"],
+  "image": "heroku/nodejs"
+}

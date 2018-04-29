@@ -1,0 +1,81 @@
+<%- header %>
+    <h5 class="card-title">Place Order</h5>
+    <div style="padding:15px; margin-top:-15px">
+        <div class="form-group row">
+            <label class="col-form-label col-form-label-lg" for="stock">Stock</label>
+            <select id="stock" class="custom-select">
+                <option value="" <% if(order.stock == undefined || order.stock == null) { %> selected <% } %> disabled hidden></option>
+                <option value="Accenture Plc" <% if(order.stock == "Accenture Plc") { %> selected <% } %> >Accenture Plc</option>
+                <option value="Alphabet Inc" <% if(order.stock == "Alphabet Inc") { %> selected <% } %> >Alphabet Inc</option>
+                <option value="Facebook, Inc." <% if(order.stock == "Facebook, Inc.") { %> selected <% } %> >Facebook, Inc.</option>
+                <option value="Apple, Inc." <% if(order.stock == "Apple, Inc.") { %> selected <% } %> >Apple, Inc.</option>
+            </select>
+        </div>
+        <div class="form-group row">
+            <label class="col-form-label col-form-label-lg" for="quantity">Quantity</label>
+            <input class="form-control" type="number" id="quantity" value="<%= order.quantity %>">
+        </div>
+        <div class="form-group row">
+            <label class="col-form-label col-form-label-lg" for="Price">Price</label>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" style="background-color:#555; color: #fff">$</span>
+                </div>
+                <input class="form-control" type="number" id="price" value="<%= order.price %>">
+            </div>
+        </div>
+        <div class="row" style="margin-top: 40px;">
+            <div class="col-4" style="padding-left:0">
+                <button type="button" onclick="placeOrder('buy')" class="btn btn-success btn-block">BID</button>
+            </div>
+            <div class="col-4">
+                <button type="button" onclick="placeOrder('sell')" class="btn btn-danger btn-block">ASK</button>
+            </div>
+            <div class="col-4" style="padding-right:0">
+                <a href="/" class="btn btn-secondary btn-block">CANCEL</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function placeOrder(direction) {
+            let order = {
+                stock: $("#stock").val(),
+                quantity: $("#quantity").val(),
+                price: $("#price").val(),
+                direction: direction,
+                orderId: '<%= order.orderId %>'
+            }
+
+            if(!(isValid(order.price)&&isValid(order.quantity)&&isValid(order.stock))&&isValid(direction)) {
+                console.error('Incomplete form')
+                return
+            }
+
+            $.ajax({
+                url: '/order/save', 
+                type: 'POST', 
+                data: JSON.stringify(order),
+                dataType: 'json',
+                contentType: 'application/json; charset=utf-8',
+                success: (data, status) => {
+                    console.log(`/order/save \nstatus:${status} \ndata:${data}`)
+
+                    if (direction) {
+                        window.location = `/order/view/${order.orderId}`
+                    } else {
+                       generateLink(`${window.location.origin}/order/new/${order.orderId}`)
+                    }
+                }
+            })
+        }
+
+        function copyLink() {
+            placeOrder(null)
+        }
+
+        function isValid(x) {
+            return x != undefined && x != null
+        }
+    </script>
+<%- footer %>
