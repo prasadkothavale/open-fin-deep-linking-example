@@ -22,7 +22,7 @@ or
 
 ```sh
 $ npm install -g openfin-cli
-$ openfin --launch --config https://open-fin-deep-linking-example.herokuapp.com/
+$ openfin --launch --config https://open-fin-deep-linking-example.herokuapp.com/openfin.json
 ```
 
 ## 2. Running Locally
