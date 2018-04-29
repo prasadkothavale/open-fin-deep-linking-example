@@ -3,7 +3,7 @@
   "startup_app": {
     "name": "OpenFin Deep Linking POC",
     "description": "A OpenFin app to demonstrate deep linking",
-    "url": "http://192.168.43.44:5000",
+    "url": "https://open-fin-deep-linking-example.herokuapp.com/",
     "uuid": "openfin-deep-linking-poc",
     "autoShow": true,
     "defaultWidth": 550,

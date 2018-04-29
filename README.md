@@ -5,6 +5,8 @@ Follow one of the two options `Deploying to Heroku` or `Running Locally` to run 
 
 ## 1. Deploying to Heroku
 
+Application is deployed at https://open-fin-deep-linking-example.herokuapp.com/ you can use existing or deploy new.
+
 Make sure you have [Heroku CLI](https://cli.heroku.com/) installed
 
 ```sh
@@ -15,6 +17,13 @@ $ heroku open
 or
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
+### Run it in OpenFin
+
+```sh
+$ npm install -g openfin-cli
+$ openfin --launch --config https://open-fin-deep-linking-example.herokuapp.com/
+```
 
 ## 2. Running Locally
 
@@ -39,4 +48,5 @@ $ npm install -g openfin-cli
 $ openfin --launch --config http://localhost:5000/openfin.json
 ```
 
+## Demo
 Click `copy deep link` button on any screen to copy its deep link to clipboard and send it to other machine having OpenFin installed. Use browser to open the URL. 
